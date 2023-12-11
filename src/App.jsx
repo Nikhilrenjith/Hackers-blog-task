@@ -1,10 +1,12 @@
 import React from "react";
-import Newspage from "./Components/Newspage";
-
+import Homepage from "./Components/Homepage";
+import { Route, Routes, Link } from "react-router-dom";
 const App = () => {
   return (
-    <div>
-      <Newspage />
+    <div className="bg-gray-100 min-h-screen">
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+      </Routes>
     </div>
   );
 };

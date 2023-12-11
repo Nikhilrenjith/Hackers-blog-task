@@ -1,4 +1,5 @@
 import React from "react";
+import { formatDistanceToNow } from "date-fns";
 import {
   Card,
   CardBody,
@@ -12,39 +13,36 @@ const Cards = ({ article }) => {
     <div>
       <Card className="mt-8 w-196">
         <CardBody>
-          <Typography variant="h5" color="blue-gray" className="mb-2">
+          <Typography
+            variant="h5"
+            color="blue-gray"
+            className="mb-2"
+            style={{ width: "1100px" }}
+          >
             {article.title}
-          </Typography>
-          <Typography>
-            The place is close to Barceloneta Beach and bus stop just 2 min by
-            walk and near to &quot;Naviglio&quot; where you can enjoy the main
-            night life in Barcelona.
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">
-          <a href="#" className="inline-block">
-            <Button
-              size="sm"
-              variant="text"
-              className="flex items-center gap-2"
-            >
-              Learn More
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="h-4 w-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                />
-              </svg>
-            </Button>
-          </a>
+          <div className="flex flex-row space-x-4">
+            <div className="flex flex-row space-x-1 italic">
+              <p className="text-black font-bold">By:</p>
+              <p>{article.author}</p>
+            </div>
+            <div className="flex flex-row space-x-1 italic">
+              <p className="text-black font-bold">Posted:</p>
+              <p>
+                {formatDistanceToNow(new Date(article.created_at), {
+                  addSuffix: true,
+                  roundingMethod: "floor",
+                  includeSeconds: true,
+                })}
+              </p>
+            </div>
+            <div className="flex flex-row space-x-1 ">
+              <p className="font-bold">{article.num_comments}</p>
+              <p>comments</p>
+            </div>
+          </div>
         </CardFooter>
       </Card>
     </div>
