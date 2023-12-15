@@ -1,34 +1,24 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import { useParams } from "react-router-dom";
-
+import { useEffect } from "react";
+import axios from "axios";
 const Details = () => {
-  const [articleDetails, setArticleDetails] = useState(null);
-  const { articleId } = useParams();
-
+  const { id } = useParams();
   useEffect(() => {
-    // Fetch the details based on the article ID from the URL params
-    const fetchDetails = async () => {
+    const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          `http://hn.algolia.com/api/v1/items/${articleId}`
+          `http://hn.algolia.com/api/v1/items/${id}`
         );
-        setArticleDetails(data);
+
         console.log(data);
       } catch (error) {
         console.log(error);
       }
     };
-
-    fetchDetails();
-  }, [articleId]);
-
-  return (
-    <div>
-      <h2>{articleDetails.title}</h2>
-      <p>{articleDetails.author}</p>
-    </div>
-  );
+    fetchData();
+  }, []);
+  return <div>Details</div>;
 };
 
 export default Details;
