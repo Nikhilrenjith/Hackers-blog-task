@@ -23,6 +23,7 @@ const Details = () => {
           `https://hn.algolia.com/api/v1/items/${id}`
         );
         setPostData(response.data);
+        console.log(postData);
       } catch (error) {
         console.log(error);
       }
@@ -91,7 +92,7 @@ const Details = () => {
                         color="blue-gray"
                         className="mb-2"
                         style={{
-                          width: "85%",
+                          width: "95%",
                         }}
                       >
                         {child.text}

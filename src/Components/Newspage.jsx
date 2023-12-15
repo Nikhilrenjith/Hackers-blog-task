@@ -73,7 +73,7 @@ const Newspage = () => {
 
       <div className="flex flex-col justify-center items-center flex-1">
         {isloading ? (
-          <div className="">
+          <div className="mt-72 mb-60">
             <HashLoader color="#a7a7a7" size={100} speedMultiplier={1.2} />
           </div>
         ) : (

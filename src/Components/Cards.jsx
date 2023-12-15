@@ -6,6 +6,7 @@ import {
   CardFooter,
   Typography,
 } from "@material-tailwind/react";
+import { FaArrowsAltV } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Cards = ({ article }) => {
@@ -25,6 +26,12 @@ const Cards = ({ article }) => {
           </CardBody>
           <CardFooter className="pt-0">
             <div className="flex flex-row space-x-4">
+              <div className="flex flex-row space-x-1 italic items-center">
+                <p className="text-black font-bold">
+                  <FaArrowsAltV />
+                </p>
+                <p>{article.points}</p>
+              </div>
               <div className="flex flex-row space-x-1 italic">
                 <p className="text-black font-bold">By:</p>
                 <p>{article.author}</p>
