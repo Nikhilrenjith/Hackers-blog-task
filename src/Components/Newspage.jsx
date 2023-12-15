@@ -71,9 +71,11 @@ const Newspage = () => {
         </div>
       </div>
 
-      <div className=" flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center flex-1">
         {isloading ? (
-          <HashLoader color="#a7a7a7" size={100} speedMultiplier={1.2} />
+          <div className="">
+            <HashLoader color="#a7a7a7" size={100} speedMultiplier={1.2} />
+          </div>
         ) : (
           articles.map((article) => (
             <Cards article={article} key={article.objectID} />

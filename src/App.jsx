@@ -7,7 +7,7 @@ const App = () => {
     <div className="bg-gray-100 min-h-screen">
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/article/:articleId" component={<Details />} />
+        <Route path="/details/:id" element={<Details />} />
       </Routes>
     </div>
   );

@@ -5,15 +5,14 @@ import {
   CardBody,
   CardFooter,
   Typography,
-  Button,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 const Cards = ({ article }) => {
   return (
     <div>
-      <Link to={`/article/` + article.story_id}>
-        <Card className="mt-8 w-196">
+      <Link to={`/details/${article.story_id}`}>
+        <Card className="mt-8 ">
           <CardBody>
             <Typography
               variant="h5"
